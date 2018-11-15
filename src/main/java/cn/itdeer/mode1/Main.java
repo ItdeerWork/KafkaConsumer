@@ -21,7 +21,7 @@ public class Main {
          *
          * 例子：java -jar KafkaProducer.jar 6 1000 10000 100 150 kafka_producer_demo
          */
-        if(args.length > 0) {
+        if (args.length > 0) {
             Constants.THREAD_NUMS = Integer.parseInt(args[0]);
             Constants.LOOP_NUMS = Integer.parseInt(args[1]);
             Constants.LOOP_DATA_NUMS = Integer.parseInt(args[2]);

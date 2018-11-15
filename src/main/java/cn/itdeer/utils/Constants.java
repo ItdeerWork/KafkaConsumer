@@ -1,6 +1,7 @@
 package cn.itdeer.utils;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+
 import java.text.SimpleDateFormat;
 
 /**
@@ -19,7 +20,6 @@ public class Constants {
 
     public static Integer THREAD_NUMS = 1;
     public static String TOPIC_NAME = "sundafei";
-
 
 
     public static Integer LOOP_NUMS = 100;

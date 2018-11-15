@@ -1,7 +1,5 @@
 package cn.itdeer.utils;
 
-import cn.itdeer.utils.Kafka_Consumer;
-
 /**
  * Directions:
  * PackageName: PACKAGE_NAME.

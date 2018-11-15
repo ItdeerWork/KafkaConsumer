@@ -8,7 +8,7 @@ public class Worker implements Runnable {
     private int num;
 
 
-    public Worker(ConsumerRecord record,int num) {
+    public Worker(ConsumerRecord record, int num) {
         this.consumerRecord = record;
         this.num = num;
     }

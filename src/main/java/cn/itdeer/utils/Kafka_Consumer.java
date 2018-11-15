@@ -21,7 +21,7 @@ public final class Kafka_Consumer {
      * kafka消费者不是线程安全的
      */
     private final KafkaConsumer<String, String> consumer;
-    private long num =0;
+    private long num = 0;
 
     private long startTime = 0L;
     private long endTime = 0L;
@@ -38,7 +38,7 @@ public final class Kafka_Consumer {
         props.put("auto.commit.interval.ms", "1000");
         props.put("session.timeout.ms", "30000");
         props.put("auto.offset.reset", "earliest");
-        props.put("num.consumer.fetchers",3);
+        props.put("num.consumer.fetchers", 3);
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         consumer = new KafkaConsumer(props);
@@ -51,14 +51,14 @@ public final class Kafka_Consumer {
         while (num != 400000) {
             ConsumerRecords<String, String> records = consumer.poll(10);
             if (null != records) {
-                num ++;
+                num++;
                 executorService.submit(new ConsumerThread(records, consumer));
             }
         }
         endTime = System.currentTimeMillis();
         System.out.println(startTime);
         System.out.println(endTime);
-        System.out.println("共消费了：" + num + " 时间为：" + (endTime-startTime)/1000);
+        System.out.println("共消费了：" + num + " 时间为：" + (endTime - startTime) / 1000);
     }
 
     public void shutdown() {
